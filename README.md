@@ -90,7 +90,4 @@ Updated Prim Path: Not Possible
 - Prim's and Kruskal's can give different MSTs when edge weights are equal, so the MST path can differ from the shortest path (see Case 1).
 - The graph is stored as an adjacency matrix, so an undirected edge is removed by setting both `graph[u][v]` and `graph[v][u]` to 0.
 
-## Author
-Sumaiya Akter Naeema (ID: 250002048)
-Course: CSE 208 Algorithm Lab, Section 250_D2
-Green University of Bangladesh
+
