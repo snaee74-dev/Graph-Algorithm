@@ -1,31 +1,85 @@
 # Graph-Algorithm
 Prim's___Dijkstra____Krushkal
 Graph Network Optimization
+Graph Network Optimization using Prim's, Kruskal's & Dijkstra's Algorithms
 
-#Problem Description
+A C program that analyzes a connected, undirected, weighted graph to find the minimum-cost network, calculate the shortest path between two vertices, and evaluate the impact of removing a specific edge.
 
-You are given a connected, undirected, weighted graph consisting of N vertices and M edges. Each vertex represents a location, and each edge represents a possible connection between two locations with an associated installation cost.
+Input
 
-The goal is to develop a C program that analyzes the network and finds the most cost-effective way to connect all locations while also determining the shortest communication route between a given source and destination.
+N M
+u v w
+u v w
+...
+Source Destination
+U V
 
-#The program performs the following tasks:
+- N = Number of vertices
+- M = Number of edges
+- u, v = Connected vertices
+- w = Edge weight
+- Source, Destination = Shortest path endpoints
+- U, V = Edge to be removed
 
-1. Minimum Spanning Tree (MST): Find the minimum-cost network that connects all vertices.
-2. Shortest Path: Determine the shortest path between the given source and destination vertices.
-3. Edge Removal Analysis: Remove a specified edge from the original graph and recalculate the minimum spanning tree and shortest path.
-4. Connectivity Check: Check whether the graph remains connected after removing the specified edge. If the graph becomes disconnected, display an appropriate message.
+Algorithms Used
 
-#Input Format
+- Prim's Algorithm: Finds the Minimum Spanning Tree (MST) with minimum total cost.
+- Kruskal's Algorithm: Finds the MST using edge sorting and Disjoint Set Union (DSU).
+- Dijkstra's Algorithm: Finds the shortest path between the source and destination.
 
-- The first line contains two integers "N" and "M", representing the number of vertices and edges.
-- The next "M" lines contain three integers "u", "v", and "w", representing an undirected edge and its weight.
-- The next line contains the source and destination vertices.
-- The final line specifies the edge that will be removed.
+Program Operations
 
-#Objective
+- Calculate MST using Prim's Algorithm.
+- Calculate MST using Kruskal's Algorithm.
+- Find the shortest path using Dijkstra's Algorithm.
+- Remove a specified edge from the original graph.
+- Recalculate MST and shortest path after edge removal.
+- Check graph connectivity and detect disconnection.
 
-To analyze graph connectivity, minimize network installation costs, calculate shortest communication routes, and observe how removing a connection affects the overall network.
+Output
 
-#Programming Language
+- Prim's MST and total cost.
+- Kruskal's MST and total cost.
+- Shortest path and distance.
+- Updated MST after edge removal.
+- Updated shortest path after edge removal.
+- Connectivity status and appropriate messages if the graph becomes disconnected.
 
-- C
+Time & Space Complexity
+
+Let V = Number of vertices and E = Number of edges.
+
+Algorithm| Time Complexity| Extra Space
+Prim's| O(V²)| O(V)
+Kruskal's| O(E log E)| O(V + E)
+Dijkstra's| O(V²)| O(V)
+Connectivity Check (DFS)| O(V + E)| O(V)
+
+Notes:
+
+- Prim's Algorithm builds an MST by repeatedly selecting the minimum-weight edge connecting a visited vertex to an unvisited vertex.
+- Kruskal's Algorithm sorts edges and uses DSU to avoid cycles while building the MST.
+- Dijkstra's Algorithm calculates the shortest path using non-negative edge weights.
+- After removing an edge, all required algorithms are executed again on the modified graph.
+- If the removed edge disconnects the graph, an MST cannot be formed for all vertices, and the program displays an appropriate message.
+
+Advantages
+
+- Minimizes total network installation cost.
+- Compares two MST algorithms.
+- Finds the shortest communication route.
+- Identifies the impact of connection failure.
+- Detects network disconnection.
+- Helps understand practical applications of graph algorithms.
+
+Applications
+
+- Computer network design.
+- Road and transportation networks.
+- Telecommunication systems.
+- Electrical power distribution.
+- Network infrastructure planning.
+
+Programming Language
+
+C
